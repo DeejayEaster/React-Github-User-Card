@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
+import UserCard from "./UserCard";
+import Followers from "./Followers";
 
 class UserData extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userData: null,
-      followersData: null
+      userData: "",
+      followersData: ["HANG SHWIFTY BABY..."]
     };
   }
 
@@ -32,7 +34,14 @@ class UserData extends Component {
 
   render() {
     console.log("state userData", this.state.userData);
-    return <div />;
+    return (
+      <div className="card-container">
+        <UserCard user={this.state.userData} />
+        {this.state.followersData.map(follower => (
+          <Followers follower={follower} />
+        ))}
+      </div>
+    );
   }
 }
 
