@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class UserCard extends Component {
+export default class UserFollowersCard extends Component {
   constructor(props) {
     super(props);
   }
@@ -10,12 +10,11 @@ export default class UserCard extends Component {
       <div className="card">
         <img
           className="card-img-top"
-          src={this.props.user.avatar_url}
-          alt="user-card"
+          src={this.props.follower.avatar_url}
+          alt="follower-card"
         />
         <div className="card-body">
-          <h5 className="card-title">{this.props.user.login}</h5>
-          <p className="card-text">Bio : {this.props.user.bio}</p>
+          <h5 className="card-title">Username : {this.props.follower.login}</h5>
         </div>
       </div>
     );
